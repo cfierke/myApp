@@ -14,7 +14,7 @@ exports.submit_lead = (req, res, next) => {
 
 exports.show_leads = (req, res, next) => {
   models.Lead.findAll().then(leads => {
-    res.render('landing', { title: 'Express', leads: leads })
+    res.render('lead/leads', { title: 'Express', leads: leads })
   })
 }
 
@@ -24,7 +24,7 @@ exports.show_lead = (req, res, next) => {
       id: req.params.lead_id
     }
   }).then(lead => {
-    res.render('lead', { lead: lead });
+    res.render('lead/lead', { lead: lead });
   })
 }
 
